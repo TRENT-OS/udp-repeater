@@ -3,8 +3,8 @@ SRC = repeater.c parseconfig.c json.c
 
 OBJS = $(patsubst %.c,%.o,$(SRC))
 
-CC = gcc
-CFLAGS = -Wall -Werror -std=c99 -pedantic -I../include -D_POSIX_SOURCE
+CC = aarch64-linux-gnu-gcc -march=armv8-a
+CFLAGS = -static -Wall -Werror -std=c99 -pedantic -I../include -D_POSIX_SOURCE -DDEBUG
 
 build-release: $(OBJS)
 	mkdir -p ../bin
