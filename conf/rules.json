@@ -1,0 +1,42 @@
+{
+    "listen" : [
+        /* Ports and interfaces to listen on */
+        {
+            "id" : 1,
+            "address" : "*",
+            "port" : "10000"
+        }
+    ],
+    "transmit" : [
+        /* Ports and interfaces to bind to for transmitting */
+        {
+            "id" : 10,
+            "address" : "*",
+            "port" : "*"
+        }
+    ],
+    "target" : [
+        /* Destination addresses and ports to send to */
+        {
+            "id" : 20,
+            "address" : "192.168.1.2",
+            "port" : "10000",
+            "transmitter" : 10
+        }
+    ],
+    "map" : [
+        /* Translation rules */
+        {
+            "source" : 1,
+            "address" : "192.168.1.1",
+            "port" : "10000",
+            "target" : [20]
+        },
+        {
+            "source" : 1,
+            "address" : "192.168.1.2",
+            "port" : "10000",
+            "target" : [20]
+        }
+    ]
+}
